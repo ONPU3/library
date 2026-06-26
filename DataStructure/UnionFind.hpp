@@ -1,13 +1,8 @@
 // UnionFind.hpp
-20 minutes ago
-
-Enhance comments in UnionFind.hpp
 // 経路圧縮 + union by size
 // O(N + Qα(N))
-23 minutes ago
-
-Add UnionFind
 // 計算量詳細 https://info.atcoder.jp/entry/algorithm_lectures/unionfind_complexity
+
 #pragma once
 #include<iostream>
 #include<vector>
