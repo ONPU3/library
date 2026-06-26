@@ -1,2 +1,3 @@
 # library
-A Competitive Programming library for me written in C++.
+競技プログラミング用自作ライブラリです。C++で作ります。
+正しく動くとは限りません。
