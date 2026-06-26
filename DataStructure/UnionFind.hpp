@@ -1,56 +1,25 @@
 // UnionFind.hpp
+20 minutes ago
+
+Enhance comments in UnionFind.hpp
 // 経路圧縮 + union by size
 // O(N + Qα(N))
+23 minutes ago
+
+Add UnionFind
 // 計算量詳細 https://info.atcoder.jp/entry/algorithm_lectures/unionfind_complexity
-
 #pragma once
 #include<iostream>
 #include<vector>
 using namespace std;
-
 struct UnionFind
 {
     vector<int>par, sz;
     int groups;
-
-    UnionFind(int N)
-    {
-        init(N);
-#pragma once
-#include<iostream>
-#include<vector>
-using namespace std;
-
-struct UnionFind
-{
-    vector<int>par, sz;
-    int groups;
-
     UnionFind(int N)
     {
         init(N);
     }
-
-    void init(int N)
-    {
-        par.resize(N);
-        iota(par.begin(), par.end(), 0);
-        sz.assign(N, 1);
-        #pragma once
-#include<iostream>
-#include<vector>
-using namespace std;
-
-struct UnionFind
-{
-    vector<int>par, sz;
-    int groups;
-
-    UnionFind(int N)
-    {
-        init(N);
-    }
-
     void init(int N)
     {
         par.resize(N);
@@ -58,18 +27,15 @@ struct UnionFind
         sz.assign(N, 1);
         groups = N;
     }
-
     int root(int a)
     {
         if(par[a] == a)return a;
         return par[a] = root(par[a]);
     }
-
     bool same(int a, int b)
     {
         return root(a) == root(b);
     }
-
     void merge(int a, int b)
     {
         a = root(a);
@@ -80,72 +46,6 @@ struct UnionFind
         sz[a] += sz[b];
         groups--;
     }
-
-    int size(int a)
-    {
-        return sz[root(a)];
-    }
-};
-    }
-
-    int root(int a)
-    {
-        if(par[a] == a)return a;
-        return par[a] = root(par[a]);
-    }
-
-    bool same(int a, int b)
-    {
-        return root(a) == root(b);
-    }
-
-    void merge(int a, int b)
-    {
-        a = root(a);
-        b = root(b);
-        if(a == b)return;
-        if(sz[a] < sz[b])swap(a, b);
-        par[b] = a;
-        sz[a] += sz[b];
-        groups--;
-    }
-
-    int size(int a)
-    {
-        return sz[root(a)];
-    }
-};
-    }
-
-    void init(int N)
-    {
-        par.resize(N);
-        iota(par.begin(), par.end(), 0);
-        sz.assign(N, 1);
-    }
-
-    int root(int a)
-    {
-        if(par[a] == a)return a;
-        return par[a] = root(par[a]);
-    }
-
-    bool same(int a, int b)
-    {
-        return root(a) == root(b);
-    }
-
-    void merge(int a, int b)
-    {
-        a = root(a);
-        b = root(b);
-        if(a == b)return;
-        if(sz[a] < sz[b])swap(a, b);
-        par[b] = a;
-        sz[a] += sz[b];
-        groups--;
-    }
-
     int size(int a)
     {
         return sz[root(a)];
