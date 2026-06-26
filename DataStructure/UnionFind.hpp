@@ -1,5 +1,6 @@
 // UnionFind.hpp
-// UnionFind - O(N + Qα(N))
+// 経路圧縮 + union by size
+// O(N + Qα(N))
 // 計算量詳細 https://info.atcoder.jp/entry/algorithm_lectures/unionfind_complexity
 
 #pragma once
