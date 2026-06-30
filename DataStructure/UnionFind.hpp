@@ -4,12 +4,13 @@
 // 計算量詳細 https://info.atcoder.jp/entry/algorithm_lectures/unionfind_complexity
 
 #pragma once
-#include<iostream>
-#include<vector>
-using namespace std;
+#include <vector>
+#include <numeric>
+#include <algorithm>
+
 struct UnionFind
 {
-    vector<int>par, sz;
+    std::vector<int> par, sz;
     int groups;
     UnionFind(int N)
     {
@@ -18,7 +19,7 @@ struct UnionFind
     void init(int N)
     {
         par.resize(N);
-        iota(par.begin(), par.end(), 0);
+        std::iota(par.begin(), par.end(), 0);
         sz.assign(N, 1);
         groups = N;
     }
@@ -36,7 +37,7 @@ struct UnionFind
         a = root(a);
         b = root(b);
         if(a == b)return;
-        if(sz[a] < sz[b])swap(a, b);
+        if(sz[a] < sz[b])std::swap(a, b);
         par[b] = a;
         sz[a] += sz[b];
         groups--;
