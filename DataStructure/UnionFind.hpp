@@ -10,38 +10,44 @@
 
 struct UnionFind
 {
-    std::vector<int> par, sz;
-    int groups;
+    std::vector<int> parent, sz;
+    int group_count;
+
     UnionFind(int N)
     {
         init(N);
     }
+    
     void init(int N)
     {
-        par.resize(N);
-        std::iota(par.begin(), par.end(), 0);
+        parent.resize(N);
+        std::iota(parent.begin(), parent.end(), 0);
         sz.assign(N, 1);
-        groups = N;
+        group_count = N;
     }
+
     int root(int a)
     {
-        if(par[a] == a)return a;
-        return par[a] = root(par[a]);
+        if(parent[a] == a)return a;
+        return parent[a] = root(parent[a]);
     }
+
     bool same(int a, int b)
     {
         return root(a) == root(b);
     }
+
     void merge(int a, int b)
     {
         a = root(a);
         b = root(b);
         if(a == b)return;
         if(sz[a] < sz[b])std::swap(a, b);
-        par[b] = a;
+        parent[b] = a;
         sz[a] += sz[b];
-        groups--;
+        group_count--;
     }
+
     int size(int a)
     {
         return sz[root(a)];
