@@ -1,5 +1,9 @@
 // Stringでの整数の足し算
 
+#pragma once
+#include<bits/stdc++.h>
+using namespace std;
+
 string add(const string& p,const string& f)
 {
     string ans;
