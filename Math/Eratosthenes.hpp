@@ -1,7 +1,8 @@
+#pragma once
+
 // エラトステネスの篩
 // O(NloglogN)
 
-#pragma once
 #include <vector>
 
 std::vector<bool> Eratosthenes(int N)
