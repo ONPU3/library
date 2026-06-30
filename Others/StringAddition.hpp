@@ -1,6 +1,8 @@
-// Stringでの整数の足し算
-
 #pragma once
+
+// Stringでの整数の足し算
+// 注意:非負整数のstring型の足し算のみ対応しています
+
 #include<bits/stdc++.h>
 using namespace std;
 
