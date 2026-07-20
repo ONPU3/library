@@ -7,29 +7,29 @@ struct Point
     Point() : x(0), y(0) {}
     Point(long double X, long double Y) : x(X), y(Y) {}
 
-    Point operator + (const Point& p)
+    Point operator + (const Point& p) const
     {
         return Point(x + p.x, y + p.y);
     }
-    Point operator - (const Point& p)
+    Point operator - (const Point& p) const
     {
         return Point(x - p.x, y - p.y);
     }
-    Point operator * (const Point& p)
+    Point operator * (long double k) const
     {
-        return Point(x * p.x, y * p.y);
+        return Point(x * k, y * k);
     }
-    Point operator / (const Point& p)
+    Point operator / (long double k) const
     {
-        return Point(x / p.x, y / p.y);
+        return Point(x / k, y / k);
     }
 
-    long double dot(Point a, Point b)
+    long double dot(const Point& a) const
     {
-        return a.x * b.x + a.y * b.y;
+        return x * a.x + y * a.y;
     }
-    long double cross(Point a, Point b)
+    long double cross(const Point& a) const
     {
-        return a.x * b.y - a.y * b.x;
+        return x * a.y - y * a.x;
     }
 };
