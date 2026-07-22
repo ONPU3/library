@@ -45,4 +45,15 @@ namespace Geometry
             return sqrt(norm());
         }
     };
+
+    istream& operator >> (istream& is, Point& p)
+    {
+        is >> p.x >> p.y;
+        return is;
+    }
+    ostream& operator << (ostream& os, const Point& p)
+    {
+        os << p.x << " " << p.y;
+        return os;
+    }
 }
